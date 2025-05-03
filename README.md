@@ -44,14 +44,33 @@ mvn test
 
 ## Structure du projet
 
-src/
-├─ main/
-│ ├─ java/com/yourorg/boite/
-│ │ ├─ App.java
-│ │ ├─ dao/
-│ │ ├─ model/
-│ │ └─ util/
-│ └─ resources/
-└─ test/
-└─ java/com/yourorg/boite/dao/
-└─ ReportDAOTest.java
+├── data/
+│ ├── clients.json
+│ └── employees.json
+├── src/
+│ ├── main/
+│ │ ├── java/
+│ │ │ └── com/yourorg/boite/
+│ │ │ ├── App.java
+│ │ │ ├── MongoConnection.java
+│ │ │ ├── dao/
+│ │ │ │ ├── ClientDAO.java
+│ │ │ │ ├── EmployeeDAO.java
+│ │ │ │ └── ReportDAO.java
+│ │ │ └── model/
+│ │ │ ├── Client.java
+│ │ │ ├── Employee.java
+│ │ │ ├── Order.java
+│ │ │ ├── Drink.java
+│ │ │ ├── Reservation.java
+│ │ │ ├── Table.java
+│ │ │ ├── Locker.java
+│ │ │ └── Event.java
+│ │ └── resources/
+│ └── test/
+│ └── java/
+│ └── com/yourorg/boite/dao/
+│ └── ReportDAOTest.java
+├── .gitignore
+├── pom.xml
+└── README.md
