@@ -1,16 +1,70 @@
-# BigData_BoiteDeNuit
+## BigData_BoiteDeNuit
 
-Pour importer les clients : 
-mongoimport --db boite_de_nuit --collection clients --file "data\clients.json" --jsonArray --drop
+Un projet Java / MongoDB pour gérer les clients, réservations, commandes et rapports d’une boîte de nuit.
 
-Pour importer les employés :
-mongoimport --db boite_de_nuit --collection employees --file "data\employees.json" --jsonArray --drop
+---
 
+## Prérequis
 
-EXECUTER :
-mvn clean compile
-mvn exec:java 
+- Java 11+  
+- Maven  
+- MongoDB en fonctionnement  
 
-Pour executer les Tests ( attention, ils suppriment les collections, il faut donc les réimporter apres) : 
+---
+
+## Import des données
+
+Placez vos fichiers JSON dans un dossier `data/` à la racine du projet.
+
+### Clients
+
+mongoimport \\
+  --db boite_de_nuit \\
+  --collection clients \\
+  --file "data/clients.json" \\
+  --jsonArray \\
+  --drop
+
+### Employés
+
+mongoimport \\
+  --db boite_de_nuit \\
+  --collection employees \\
+  --file "data/employees.json" \\
+  --jsonArray \\
+  --drop
+
+---
+
+## Compilation et exécution
+
+1. Compiler le projet  
+   mvn clean compile
+
+2. Lancer l’application  
+   mvn exec:java
+
+---
+
+## Tests unitaires
+
+> Attention : les tests réinitialisent les collections (`clients`, `employees`).  
+> Il faudra donc réimporter les données après chaque exécution des tests.
+
 mvn test
 
+---
+
+## Structure du projet
+
+src/
+├─ main/
+│ ├─ java/com/yourorg/boite/
+│ │ ├─ App.java
+│ │ ├─ dao/
+│ │ ├─ model/
+│ │ └─ util/
+│ └─ resources/
+└─ test/
+└─ java/com/yourorg/boite/dao/
+└─ ReportDAOTest.java
