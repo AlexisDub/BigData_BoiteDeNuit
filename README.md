@@ -17,23 +17,11 @@ Un projet Java / MongoDB pour gérer les clients, réservations, commandes et ra
 
 ### Clients
 
-mongoimport \\
-  --db boite_de_nuit \\
-  --collection clients \\
-  --file "data/clients.json" \\
-  --jsonArray \\
-  --drop
+mongoimport --db boite_de_nuit --collection clients --file "data\clients.json" --jsonArray --drop
 
 ### Employés
 
-mongoimport \\
-  --db boite_de_nuit \\
-  --collection employees \\
-  --file "data/employees.json" \\
-  --jsonArray \\
-  --drop
-
----
+mongoimport --db boite_de_nuit --collection employees --file "data\employees.json" --jsonArray --drop
 
 ## Compilation et exécution
 
