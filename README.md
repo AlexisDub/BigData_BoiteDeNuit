@@ -44,6 +44,7 @@ mvn test
 
 ## Structure du projet
 
+BigData_BoiteDeNuit/
 ├── data/
 │ ├── clients.json
 │ └── employees.json
