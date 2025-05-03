@@ -1,0 +1,44 @@
+version: "3.8"
+services:
+  config1:
+    image: mongo:6.0
+    command: ["mongod","--configsvr","--replSet","rs-config","--port","27019"]
+    volumes: ["./data/config1:/data/db"]
+  config2:
+    image: mongo:6.0
+    command: ["mongod","--configsvr","--replSet","rs-config","--port","27019"]
+    volumes: ["./data/config2:/data/db"]
+  config3:
+    image: mongo:6.0
+    command: ["mongod","--configsvr","--replSet","rs-config","--port","27019"]
+    volumes: ["./data/config3:/data/db"]
+
+  shard1:
+    image: mongo:6.0
+    command: ["mongod","--shardsvr","--replSet","rs-shard1","--bind_ip_all"]
+    volumes: ["./data/shard1:/data/db"]
+  shard2:
+    image: mongo:6.0
+    command: ["mongod","--shardsvr","--replSet","rs-shard2","--bind_ip_all"]
+    volumes: ["./data/shard2:/data/db"]
+  shard3:
+    image: mongo:6.0
+    command: ["mongod","--shardsvr","--replSet","rs-shard3","--bind_ip_all"]
+    volumes: ["./data/shard3:/data/db"]
+
+  mongos:
+    image: mongo:6.0
+    command: >
+      mongos
+      --configdb rs-config/config1:27019,config2:27019,config3:27019
+      --bind_ip_all
+      --port 27017
+    depends_on:
+      - config1
+      - config2
+      - config3
+      - shard1
+      - shard2
+      - shard3
+    ports:
+      - "27017:27017"
