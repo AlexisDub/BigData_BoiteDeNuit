@@ -14,7 +14,6 @@ Un projet Java / MongoDB pour gérer les clients, réservations, commandes et ra
 
 ## Import des données
 
-Placez vos fichiers JSON dans un dossier `data/` à la racine du projet.
 
 ### Clients
 
