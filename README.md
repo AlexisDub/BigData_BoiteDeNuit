@@ -8,7 +8,9 @@ Un projet Java / MongoDB pour gérer les clients, réservations et commandes d�
 
 - Java 11+  
 - Maven  
-- MongoDB en fonctionnement  
+- MongoDB en fonctionnement
+- Docker & Docker-Compose installés
+
 
 ---
 
@@ -23,12 +25,15 @@ mongoimport --db boite_de_nuit --collection clients --file "data\clients.json" -
 
 mongoimport --db boite_de_nuit --collection employees --file "data\employees.json" --jsonArray --drop
 
-## Compilation et exécution
+## Compilation et exécution du cluster 
 
-1. Compiler le projet  
+1. Lancer Docker
+   docker-compose up -d
+
+2. Compiler le projet  
    mvn clean compile
 
-2. Lancer l’application  
+3. Lancer l’application  
    mvn exec:java
 
 ---
