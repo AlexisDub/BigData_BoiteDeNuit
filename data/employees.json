@@ -1,0 +1,5 @@
+[
+    { "name": "Paul Durand", "role": "Barman", "salary": 2500 },
+    { "name": "Julie Martin", "role": "Serveuse", "salary": 2200 },
+    { "name": "Karim Lopez", "role": "Caissier", "salary": 2000 }
+  ]
