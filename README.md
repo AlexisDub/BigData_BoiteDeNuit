@@ -27,12 +27,12 @@ mongoimport --db boite_de_nuit --collection employees --file "data\employees.jso
 
 ## Compilation et exécution du cluster 
 
-2. Lancer Docker  
+1. Lancer Docker  
    docker-compose up -d
 
-3. Compiler le projet  
+2. Compiler le projet  
    mvn clean compile
-4. Lancer l’application  
+3. Lancer l’application  
    mvn exec:java
 
 ---
