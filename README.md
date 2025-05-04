@@ -17,10 +17,10 @@ Video presentation : https://www.youtube.com/watch?v=sP4MJCq4iR0
 
 ## Compilation et exécution du cluster 
 
-1.docker-compose up -d
+1. docker-compose up -d
 
 ### Initialisation du Replica Set des config servers :
-2.docker-compose exec config1 mongosh --port 27019 --eval " rs.initiate({ _id: 'rs-config', configsvr: true, members: [ { _id: 0, host: 'config1:27019' }, { _id: 1, host: 'config2:27019' }, { _id: 2, host: 'config3:27019' } ] }); "
+2. docker-compose exec config1 mongosh --port 27019 --eval " rs.initiate({ _id: 'rs-config', configsvr: true, members: [ { _id: 0, host: 'config1:27019' }, { _id: 1, host: 'config2:27019' }, { _id: 2, host: 'config3:27019' } ] }); "
 
 ### Initialiser les 3 shards : 
 3. docker-compose exec shard1 mongosh --eval "rs.initiate({_id:'rs-shard1',members:[{_id:0,host:'shard1:27017'}]});"
