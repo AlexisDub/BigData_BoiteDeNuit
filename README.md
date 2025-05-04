@@ -14,16 +14,6 @@ Un projet Java / MongoDB pour gérer les clients, réservations et commandes d�
 
 ---
 
-## Import des données
-
-
-### Clients
-
-mongoimport --db boite_de_nuit --collection clients --file "data\clients.json" --jsonArray --drop
-
-### Employés
-
-mongoimport --db boite_de_nuit --collection employees --file "data\employees.json" --jsonArray --drop
 
 ## Compilation et exécution du cluster 
 
