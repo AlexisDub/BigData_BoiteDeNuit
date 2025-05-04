@@ -23,9 +23,9 @@ Initialisation du Replica Set des config servers :
 docker-compose exec config1 mongosh --port 27019 --eval " rs.initiate({ _id: 'rs-config', configsvr: true, members: [ { _id: 0, host: 'config1:27019' }, { _id: 1, host: 'config2:27019' }, { _id: 2, host: 'config3:27019' } ] }); "
 
 Initialiser les 3 shards : 
-docker-compose exec shard1 mongosh --eval "rs.initiate({_id:'rs-shard1',members:[{_id:0,host:'shard1:27017'}]});"
-docker-compose exec shard2 mongosh --eval "rs.initiate({_id:'rs-shard2',members:[{_id:0,host:'shard2:27017'}]});"
-docker-compose exec shard3 mongosh --eval "rs.initiate({_id:'rs-shard3',members:[{_id:0,host:'shard3:27017'}]});"
+1. docker-compose exec shard1 mongosh --eval "rs.initiate({_id:'rs-shard1',members:[{_id:0,host:'shard1:27017'}]});"
+2. docker-compose exec shard2 mongosh --eval "rs.initiate({_id:'rs-shard2',members:[{_id:0,host:'shard2:27017'}]});"
+3. docker-compose exec shard3 mongosh --eval "rs.initiate({_id:'rs-shard3',members:[{_id:0,host:'shard3:27017'}]});"
 
 Ajouter les shards : 
 docker-compose exec mongos mongosh --eval " sh.addShard('rs-shard1/shard1:27017'); sh.addShard('rs-shard2/shard2:27017'); sh.addShard('rs-shard3/shard3:27017'); "
