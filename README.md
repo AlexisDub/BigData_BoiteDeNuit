@@ -1,7 +1,7 @@
 ## BigData_BoiteDeNuit
 
 Un projet Java / MongoDB pour gérer les clients, réservations et commandes d’une boîte de nuit.
-
+Video presentation : https://www.youtube.com/watch?v=sP4MJCq4iR0
 ---
 
 ## Prérequis
